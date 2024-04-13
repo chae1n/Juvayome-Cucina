@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-04-13T06:05:19.963Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="wNVPq6A0PXJzcSxy4mr5" version="24.2.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-13T06:18:10.822Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="fRS09cAhXxXd5_IKouLD" version="24.2.5" type="github">
   <diagram name="Page-1" id="2cc2dc42-3aac-f2a9-1cec-7a8b7cbee084">
     <mxGraphModel dx="1674" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -19,10 +19,10 @@
         <mxCell id="7026571954dc6520-15" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.markup.line;strokeColor=#999999;rounded=0;labelBackgroundColor=none;fillColor=#ffffff;fontFamily=Verdana;fontSize=12;fontColor=#000000;" parent="7026571954dc6520-1" vertex="1">
           <mxGeometry y="225" width="1050" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="7026571954dc6520-16" value="Title 1" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" parent="7026571954dc6520-1" vertex="1">
+        <mxCell id="7026571954dc6520-16" value="&quot;Overview&quot;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" parent="7026571954dc6520-1" vertex="1">
           <mxGeometry x="470" y="245" width="110" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="7026571954dc6520-17" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&amp;nbsp;" style="text;spacingTop=-5;whiteSpace=wrap;html=1;align=center;fontSize=12;fontFamily=Helvetica;fillColor=none;strokeColor=none;rounded=0;shadow=1;labelBackgroundColor=none;" parent="7026571954dc6520-1" vertex="1">
+        <mxCell id="7026571954dc6520-17" value="Some sort of restaurant general summary/purpose giving background into what type of ambiance the place presents itself to be and the restaurant mission.&amp;nbsp;" style="text;spacingTop=-5;whiteSpace=wrap;html=1;align=center;fontSize=12;fontFamily=Helvetica;fillColor=none;strokeColor=none;rounded=0;shadow=1;labelBackgroundColor=none;" parent="7026571954dc6520-1" vertex="1">
           <mxGeometry x="380" y="275" width="300" height="85" as="geometry" />
         </mxCell>
         <mxCell id="7026571954dc6520-18" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;ABOUT&lt;/font&gt;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;mainText=;buttonStyle=round;fontSize=17;fontStyle=0;fillColor=none;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;" parent="7026571954dc6520-1" vertex="1">
@@ -31,16 +31,16 @@
         <mxCell id="7026571954dc6520-22" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.graphics.simpleIcon;strokeColor=#999999;fillColor=#ffffff;rounded=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;" parent="7026571954dc6520-1" vertex="1">
           <mxGeometry x="458" y="540" width="135" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="7026571954dc6520-31" value="Title 2" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" parent="7026571954dc6520-1" vertex="1">
+        <mxCell id="7026571954dc6520-31" value="&quot;Highlight&quot;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" parent="7026571954dc6520-1" vertex="1">
           <mxGeometry x="440" y="345" width="170" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7026571954dc6520-32" value="Title 3" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" parent="7026571954dc6520-1" vertex="1">
+        <mxCell id="7026571954dc6520-32" value="&quot;Highlight 2&quot;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" parent="7026571954dc6520-1" vertex="1">
           <mxGeometry x="440" y="435" width="170" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7026571954dc6520-34" value="Some default text to fill some space, and&amp;nbsp;&lt;span&gt;something more so there is more text&lt;/span&gt;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=12;fontFamily=Verdana;whiteSpace=wrap;" parent="7026571954dc6520-1" vertex="1">
+        <mxCell id="7026571954dc6520-34" value="Key feature or selective dining experience to share with viewers/customers." style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=12;fontFamily=Verdana;whiteSpace=wrap;" parent="7026571954dc6520-1" vertex="1">
           <mxGeometry x="325" y="375" width="400" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="7026571954dc6520-36" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to beatae vitae dicta sunt explicabo.&amp;nbsp;" style="text;spacingTop=-5;whiteSpace=wrap;html=1;align=center;fontSize=12;fontFamily=Helvetica;fillColor=none;strokeColor=none;rounded=0;shadow=1;labelBackgroundColor=none;" parent="7026571954dc6520-1" vertex="1">
+        <mxCell id="7026571954dc6520-36" value="Feature menu items or fresh ingredients, award/recognition...&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This can also be space for a reservation preface.&lt;/div&gt;" style="text;spacingTop=-5;whiteSpace=wrap;html=1;align=center;fontSize=12;fontFamily=Helvetica;fillColor=none;strokeColor=none;rounded=0;shadow=1;labelBackgroundColor=none;" parent="7026571954dc6520-1" vertex="1">
           <mxGeometry x="275" y="465" width="500" height="55" as="geometry" />
         </mxCell>
         <mxCell id="pHAH3Ql8F_G66UEsCNzO-21" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;MENUS&lt;/font&gt;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;mainText=;buttonStyle=round;fontSize=17;fontStyle=0;fillColor=none;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;" parent="7026571954dc6520-1" vertex="1">
