@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2024-04-24T22:29:54.224Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="Ob1Lki5vuC1O0GJVFV7f" version="24.2.8" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-04-24T22:36:37.789Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="Gd7Qwq6jazBbwiwdEUUB" version="24.2.8" type="github" pages="2">
   <diagram name="Page-1" id="2cc2dc42-3aac-f2a9-1cec-7a8b7cbee084">
     <mxGraphModel dx="2008" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="7026571954dc6520-1" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.browserWindow;rSize=0;strokeColor=#666666;mainText=,;recursiveResize=0;rounded=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fillColor=#00BFBF;" parent="1" vertex="1">
+        <mxCell id="7026571954dc6520-1" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.browserWindow;rSize=0;strokeColor=#666666;mainText=,;recursiveResize=0;rounded=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fillColor=#4B19D4;" parent="1" vertex="1">
           <mxGeometry x="-20" y="300" width="1050" height="820" as="geometry" />
         </mxCell>
         <mxCell id="7026571954dc6520-2" value="Page 1" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.anchor;fontSize=17;fontColor=#666666;align=left;" parent="7026571954dc6520-1" vertex="1">
@@ -83,7 +83,7 @@
         <mxCell id="VD9zA6gnKAksnYso77Oy-20" value="https://www.juvayomecucina.com/about us/" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.anchor;rSize=0;fontSize=17;fontColor=#666666;align=left;" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
           <mxGeometry x="130" y="60" width="250" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="VD9zA6gnKAksnYso77Oy-21" value="&lt;b&gt;&lt;font color=&quot;#fcfcfc&quot; face=&quot;Lucida Console&quot;&gt;About Us&lt;/font&gt;&lt;/b&gt;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=30;fontFamily=Verdana" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
+        <mxCell id="VD9zA6gnKAksnYso77Oy-21" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot; color=&quot;#fcfcfc&quot; face=&quot;Lucida Console&quot;&gt;About Us&lt;/font&gt;&lt;/b&gt;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=30;fontFamily=Verdana" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
           <mxGeometry x="355" y="145" width="340" height="50" as="geometry" />
         </mxCell>
         <mxCell id="VD9zA6gnKAksnYso77Oy-22" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.markup.line;strokeColor=#999999;rounded=0;labelBackgroundColor=none;fillColor=#ffffff;fontFamily=Verdana;fontSize=12;fontColor=#000000;" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
@@ -95,17 +95,17 @@
         <mxCell id="VD9zA6gnKAksnYso77Oy-24" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 11px;&quot;&gt;ABOUT&lt;/font&gt;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;mainText=;buttonStyle=round;fontSize=17;fontStyle=0;fillColor=none;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
           <mxGeometry x="955" y="115" width="90" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="VD9zA6gnKAksnYso77Oy-25" value="&lt;font color=&quot;#ffffff&quot; face=&quot;Lucida Console&quot; style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Our History&lt;/b&gt;&lt;/font&gt;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
+        <mxCell id="VD9zA6gnKAksnYso77Oy-25" value="&lt;font color=&quot;#ffffff&quot; face=&quot;Lucida Console&quot; style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Our History&lt;/b&gt;&lt;/font&gt;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
           <mxGeometry x="440" y="245" width="170" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="VD9zA6gnKAksnYso77Oy-26" value="&lt;font color=&quot;#ffffff&quot; face=&quot;Lucida Console&quot; style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Mission Statement&lt;/b&gt;&lt;/font&gt;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
-          <mxGeometry x="427.39" y="485" width="170" height="30" as="geometry" />
+        <mxCell id="VD9zA6gnKAksnYso77Oy-26" value="&lt;font color=&quot;#ffffff&quot; face=&quot;Lucida Console&quot; style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Mission Statement&lt;/b&gt;&lt;/font&gt;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=15;fontFamily=Verdana" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
+          <mxGeometry x="440.01" y="480" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VD9zA6gnKAksnYso77Oy-27" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;In 2264, renowned space explorer Captain Juvayome ventured into the depths of the galaxy in search of culinary discoveries. When she stumbled upon Jupiter she was inspired by its unique atmosphere composition and had a vision to create a dining experience unlike any other in the galaxy.&lt;/i&gt;&lt;/font&gt;" style="text;html=1;points=[];align=center;verticalAlign=top;spacingTop=-4;fontSize=12;fontFamily=Verdana;whiteSpace=wrap;" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
-          <mxGeometry x="333" y="355" width="405" height="110" as="geometry" />
+          <mxGeometry x="322.5" y="355" width="405" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="VD9zA6gnKAksnYso77Oy-28" value="&lt;font color=&quot;#ffffff&quot; face=&quot;Verdana&quot; style=&quot;font-size: 14px;&quot;&gt;Here at&amp;nbsp; Juvayome Cucina we honor a commitment to create an immersive dining experience for guests, where the elemental essence of Jupiter&#39;s atmosphere meets the artistry of culinary innovation!&lt;/font&gt;" style="text;spacingTop=-5;whiteSpace=wrap;html=1;align=center;fontSize=12;fontFamily=Helvetica;fillColor=none;strokeColor=none;rounded=0;shadow=1;labelBackgroundColor=none;" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
-          <mxGeometry x="275" y="525" width="500" height="55" as="geometry" />
+        <mxCell id="VD9zA6gnKAksnYso77Oy-28" value="&lt;font color=&quot;#ffffff&quot; face=&quot;Verdana&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;Here at&amp;nbsp; Juvayome Cucina we honor a commitment to create an immersive dining experience for guests, where the elemental essence of Jupiter&#39;s atmosphere meets the artistry of culinary innovation!&lt;/i&gt;&lt;/font&gt;" style="text;spacingTop=-5;whiteSpace=wrap;html=1;align=center;fontSize=12;fontFamily=Helvetica;fillColor=none;strokeColor=none;rounded=0;shadow=1;labelBackgroundColor=none;" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
+          <mxGeometry x="275.01" y="510" width="500" height="55" as="geometry" />
         </mxCell>
         <mxCell id="VD9zA6gnKAksnYso77Oy-29" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 11px;&quot;&gt;MENUS&lt;/font&gt;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.buttons.button;strokeColor=#666666;mainText=;buttonStyle=round;fontSize=17;fontStyle=0;fillColor=none;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
           <mxGeometry x="955" y="145" width="90" height="25" as="geometry" />
@@ -123,7 +123,7 @@
           <mxGeometry x="389.5" y="785" width="292" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VD9zA6gnKAksnYso77Oy-34" value="" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://cdn.mos.cms.futurecdn.net/GWkcLq7kJYmppmaVMEVkT5-1200-80.jpg;" vertex="1" parent="VD9zA6gnKAksnYso77Oy-18">
-          <mxGeometry x="427.39" y="595" width="195.23" height="110" as="geometry" />
+          <mxGeometry x="427.39" y="590" width="195.23" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
