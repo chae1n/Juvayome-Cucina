@@ -1,0 +1,56 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color:#ccc;
+}
+table {
+  border: 1px solid black;
+  th {
+    background-color: palegoldenrod;
+  }
+  caption {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
+
+table, th, td {
+  border: 1px solid black;
+  font-family: Cambria;
+}
+
+.happyHourDefaultStyle {
+  background-color: #bc5cf0;
+}
+
+.crazyStyle {
+    /* Your alternate styles here */
+  background-color: #a1f250;
+  font-family: cursive;
+}
+
+p {
+  border: 1px solid black;
+}
+
+
+/* CSS for transitions */
+.transition {
+    transition-property: background-color, color; /* Properties to transition */
+    transition-duration: 0.3s; /* Duration of the transition */
+    transition-timing-function: ease; /* Timing function for the transition */
+}
+
+/* CSS for animations */
+@keyframes slidein {
+    from {
+        transform: translateX(-100%); /* Initial state of the animation */
+    }
+    to {
+        transform: translateX(0); /* Final state of the animation */
+    }
+}
+
+.animation {
+    animation: slidein 1s ease forwards; /* Apply animation to the element */
+}
