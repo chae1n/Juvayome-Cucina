@@ -12,21 +12,11 @@ table {
     font-size: 1.5em;
     font-weight: bold;
   }
-  display: inline-block;
-  align-items: baseline;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
 }
 
 table, th, td {
   border: 1px solid black;
   font-family: Cambria;
-  display: inline-block;
-  align-items: baseline;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
 }
 
 h1 {
