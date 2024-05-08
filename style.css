@@ -22,7 +22,7 @@ table, th, td {
 }
 
 h1 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  font-family: 'Inconsolata', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 24px;
   text-align: center;
@@ -32,7 +32,7 @@ h1 {
 
 body {
   background-color: rgb(74, 19, 202);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  font-family: 'Inconsolata', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 14px;
   color: #fff;
