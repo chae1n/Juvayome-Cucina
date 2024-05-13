@@ -1,0 +1,61 @@
+<html>
+<body>
+
+<h2>Contact Us</h2>
+<form id="contactForm">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name">
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email">
+
+<label for = "message">Message:</label>
+<textarea id="message" name="message"></textarea>
+
+<input type="submit" value="Submit">
+</form>
+<div id="response"></div>
+
+<script>
+    //Function to validate the contact form
+function validateForm(event){
+    event.preventDefault(); //Prevent form from submitting
+    //get from inputs
+    var name = document.getElementById('name').value.trim();
+    var email= document.getElementById('email').value.trim();
+    var message = document.getElementById('message').value.trim();
+    // var response = document.getElementById('response');
+    // check if inputs are empty
+    if(name === '' || message === '') {
+        response.innerHTML = '<p class ="error">Please fill in all fields</p>';
+        return; 
+    }
+    //validate email as format
+    var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (!emailRegex.test(email)) {
+        response.innerHTML='<p class = "error">Please enter a valid email address</p>';
+        return;
+    }
+    //if all validations pass submit form here
+    var formData = new FormData(document.getElementById('contactForm'));
+    var xhr =new XMLHttpRequest();
+    xhr.open('POST', 'submit.php', true);
+    xhr.onload=function(){
+        if(xhr.status == 200){
+            response.innerHTML = '<p>Form submitted successfully</p>';
+            document.getElementById('contactForm').reset(); //clear form fields
+        }   else{
+            response.innerHTML = '<p class="error"> Error submitting form. Please try again later.</p>';
+        }
+    };
+    xhr.send(formData);
+}
+// add event listener to the form submit button
+document.getElementById('contactForm').addEventListener('submit', validateForm); 
+    
+
+</script>
+    
+
+</body>
+</html>
