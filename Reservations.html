@@ -1,106 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
+< !DOCTYPE html >
+    <html lang="en">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="style.css">
-  <title>Juvayome | Reservations</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-    }
-
-    .countdown-container {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .countdown-label {
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-
-    .countdown-value {
-      font-size: 40px;
-      font-weight: bold;
-      color: #333;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <nav id="navbar">
-      <div class="container">
-        <h1 class="logo"><a href="index.html">Juvayome Cucina</a></h1>
-        <ul>
-          <li><a class="current" href="Reservations.html">Reservations</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <div class="countdown-container">
-    <div class="countdown-label">Days</div>
-    <div id="days" class="countdown-value">00</div>
-    <div class="countdown-label">Hours</div>
-    <div id="hours" class="countdown-value">00</div>
-    <div class="countdown-label">Minutes</div>
-    <div id="minutes" class="countdown-value">00</div>
-    <div class="countdown-label">Seconds</div>
-    <div id="seconds" class="countdown-value">00</div>
-    <input type="datetime-local" id="date-input" style="margin-top: 20px;">
-  </div>
-
- <div class="countdown-container">
-        <h2>Reservation Deadline Countdown</h2>
-        <div class="countdown-label">Days</div>
-        <div id="days" class="countdown-value">00</div>
-        <div class="countdown-label">Hours</div>
-        <div id="hours" class="countdown-value">00</div>
-        <div class="countdown-label">Minutes</div>
-        <div id="minutes" class="countdown-value">00</div>
-        <div class="countdown-label">Seconds</div>
-        <div id="seconds" class="countdown-value">00</div>
-        <p>Please complete your reservation before the countdown ends.</p>
-    </div>
-
-    <script>
-        const daysElement = document.getElementById('days');
-        const hoursElement = document.getElementById('hours');
-        const minutesElement = document.getElementById('minutes');
-        const secondsElement = document.getElementById('seconds');
-
-        // Set the reservation deadline date and time (YYYY-MM-DDTHH:MM)
-        const reservationDeadline = new Date('2024-06-01T12:00:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = reservationDeadline - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            daysElement.textContent = days < 10 ? '0' + days : days;
-            hoursElement.textContent = hours < 10 ? '0' + hours : hours;
-            minutesElement.textContent = minutes < 10 ? '0' + minutes : minutes;
-            secondsElement.textContent = seconds < 10 ? '0' + seconds : seconds;
-
-            if (distance < 0) {
-                // Reservation deadline has passed, update UI accordingly
-                document.querySelector('.countdown-container').innerHTML = '<h2>Reservation Deadline Expired</h2>';
-            }
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <link rel="stylesheet" href="style.css">
+                <title>Juvayome | Reservations</title>
+                <style>
+                    body {
+                        font - family: Arial, sans-serif;
+                    background-color: #f4f4f4;
         }
 
-        // Update the countdown every second
-        setInterval(updateCountdown, 1000);
-    </script>
-</body>
+                    .countdown-container {
+                        text - align: center;
+                    margin-top: 50px;
+        }
 
-</html>
+                    .countdown-label {
+                        font - size: 20px;
+                    margin-bottom: 5px;
+        }
+
+                    .countdown-value {
+                        font - size: 40px;
+                    font-weight: bold;
+                    color: #333;
+        }
+                </style>
+        </head>
+
+        <body>
+            <header>
+                <nav id="navbar">
+                    <div class="container">
+                        <h1 class="logo"><a href="index.html">Juvayome Cucina</a></h1>
+                        <ul>
+                            <li><a class="current" href="Reservations.html">Reservations</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <div class="countdown-container">
+                <div class="countdown-label">Days</div>
+                <div class="countdown-value days">00</div>
+                <div class="countdown-label">Hours</div>
+                <div class="countdown-value hours">00</div>
+                <div class="countdown-label">Minutes</div>
+                <div class="countdown-value minutes">00</div>
+                <div class="countdown-label">Seconds</div>
+                <div class="countdown-value seconds">00</div>
+                <input type="datetime-local" id="date-input" style="margin-top: 20px;">
+            </div>
+
+            <div class="countdown-container">
+                <h2>Reservation Deadline Countdown</h2>
+                <div class="countdown-label">Days</div>
+                <div class="countdown-value days">00</div>
+                <div class="countdown-label">Hours</div>
+                <div class="countdown-value hours">00</div>
+                <div class="countdown-label">Minutes</div>
+                <div class="countdown-value minutes">00</div>
+                <div class="countdown-label">Seconds</div>
+                <div class="countdown-value seconds">00</div>
+                <p>Please complete your reservation before the countdown ends.</p>
+            </div>
+
+            <script>
+                const countdownContainers = document.querySelectorAll('.countdown-container');
+
+        countdownContainers.forEach(container => {
+            const daysElement = container.querySelector('.days');
+                const hoursElement = container.querySelector('.hours');
+                const minutesElement = container.querySelector('.minutes');
+                const secondsElement = container.querySelector('.seconds');
+
+                // Set the reservation deadline date and time (YYYY-MM-DDTHH:MM)
+                const reservationDeadline = new Date('2024-06-01T12:00:00').getTime();
+
+                function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = reservationDeadline - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                daysElement.textContent = days < 10 ? '0' + days : days;
+                hoursElement.textContent = hours < 10 ? '0' + hours : hours;
+                minutesElement.textContent = minutes < 10 ? '0' + minutes : minutes;
+                secondsElement.textContent = seconds < 10 ? '0' + seconds : seconds;
+
+                if (distance < 0) {
+                    // Reservation deadline has passed, update UI accordingly
+                    container.innerHTML = '<h2>Reservation Deadline Expired</h2>';
+                }
+            }
+
+                // Update the countdown every second
+                setInterval(updateCountdown, 1000);
+        });
+            </script>
+        </body>
+
+    </html>
