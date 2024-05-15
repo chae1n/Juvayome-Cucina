@@ -134,73 +134,89 @@
                 <div class="countdown-value seconds">00</div>
                 <p>Please complete your reservation before the countdown ends.</p>
             </div>
+<script>
+    let interval;
+    const countdownContainer = document.getElementById('countdown-container');
+    const dateInput = document.getElementById('reservation-date');
 
-            <script>
-                let interval;
-                const countdownContainer = document.getElementById('countdown-container');
-                const dateInput = document.getElementById('reservation-date');
+    function setReservation() {
+        const selectedDate = dateInput.value;
+        if (!selectedDate) {
+            showError("Please select a valid date.");
+            return;
+        }
+        // Constructing a date string with a time and a UTC timezone identifier 'Z'
+        const reservationDeadline = new Date(selectedDate + 'T23:59:59Z');
+        if (isNaN(reservationDeadline.getTime())) {
+            showError("Invalid date selected.");
+            return;
+        }
+        localStorage.setItem('reservationDeadline', reservationDeadline.toISOString());
+        countdownContainer.style.display = 'block'; // Make sure to display the container
+        startClock(reservationDeadline.getTime());
+    }
 
-                function setReservation() {
-            const selectedDate = dateInput.value + 'T23:59:59';
-                if (selectedDate) {
-                    localStorage.setItem('reservationDeadline', selectedDate);
-                startClock(new Date(selectedDate).getTime());
-            }
+    function startClock(endTime) {
+        if (interval) clearInterval(interval);
+        interval = setInterval(() => {
+            updateCountdown(endTime);
+        }, 1000);
+    }
+
+    function updateCountdown(endTimestamp) {
+        const now = new Date().getTime();
+        const timeLeft = getTimeLeft(endTimestamp - now);
+
+        if (timeLeft.total < 0) {
+            clearInterval(interval);
+            countdownContainer.innerHTML = '<h2>Reservation Deadline Expired</h2>';
+            return;
         }
 
-                function startClock(endTime) {
-            const endTimestamp = new Date(endTime).getTime();
-                if (interval) clearInterval(interval);
-            interval = setInterval(() => {
-                    updateCountdown(endTimestamp);
-            }, 1000);
-        }
+        // Update UI
+        document.querySelector('.days').textContent = formatTime(timeLeft.days);
+        document.querySelector('.hours').textContent = formatTime(timeLeft.hours);
+        document.querySelector('.minutes').textContent = formatTime(timeLeft.minutes);
+        document.querySelector('.seconds').textContent = formatTime(timeLeft.seconds);
+    }
 
-                function updateCountdown(endTimestamp) {
-            const now = new Date().getTime();
-                const timeLeft = getTimeLeft(endTimestamp - now);
-
-                if (timeLeft.total < 0) {
-                    clearInterval(interval);
-                countdownContainer.innerHTML = '<h2>Reservation Deadline Expired</h2>';
-                return;
-            }
-
-                // Update UI
-                document.querySelector('.days').textContent = formatTime(timeLeft.days);
-                document.querySelector('.hours').textContent = formatTime(timeLeft.hours);
-                document.querySelector('.minutes').textContent = formatTime(timeLeft.minutes);
-                document.querySelector('.seconds').textContent = formatTime(timeLeft.seconds);
-        }
-
-                function getTimeLeft(distance) {
-            return {
-                    total: distance,
-                days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-                seconds: Math.floor((distance % (1000 * 60)) / 1000)
-            };
-        }
-
-                function formatTime(time) {
-            return time < 10 ? '0' + time : time;
-        }
-
-                // Check for saved date in local storage
-                window.onload = function() {
-            const savedDate = localStorage.getItem('reservationDeadline');
-                if (savedDate) {
-                    dateInput.value = new Date(savedDate).toISOString().substring(0, 10);
-                startClock(savedDate);
-            }
+    function getTimeLeft(distance) {
+        return {
+            total: distance,
+            days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+            minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+            seconds: Math.floor((distance % (1000 * 60)) / 1000)
         };
+    }
 
-        // Listen for changes in the date input
-        dateInput.addEventListener('change', () => {
-            if (interval) clearInterval(interval); // Reset the current countdown
-                setReservation(); // Set a new reservation
-        });
-            </script>
-        </body>
-    </html>
+    function formatTime(time) {
+        return time < 10 ? '0' + time : time;
+    }
+
+    function showError(message) {
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
+    }
+
+    // Check for saved date in local storage
+    window.onload = function() {
+        const savedDate = localStorage.getItem('reservationDeadline');
+        if (savedDate) {
+            const savedDateTime = new Date(savedDate);
+            if (savedDateTime > new Date()) { // Check if the saved date is still in the future
+                dateInput.value = savedDateTime.toISOString().substring(0, 10);
+                countdownContainer.style.display = 'block';
+                startClock(savedDateTime.getTime());
+            } else {
+                localStorage.removeItem('reservationDeadline'); // Clear expired date
+            }
+        }
+    };
+
+    // Listen for changes in the date input
+    dateInput.addEventListener('change', setReservation);
+</script>
+</body>
+</html>
