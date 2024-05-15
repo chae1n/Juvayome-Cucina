@@ -45,18 +45,6 @@
                 </nav>
             </header>
             <div class="countdown-container">
-                <div class="countdown-label">Days</div>
-                <div class="countdown-value days">00</div>
-                <div class="countdown-label">Hours</div>
-                <div class="countdown-value hours">00</div>
-                <div class="countdown-label">Minutes</div>
-                <div class="countdown-value minutes">00</div>
-                <div class="countdown-label">Seconds</div>
-                <div class="countdown-value seconds">00</div>
-                <input type="datetime-local" id="date-input" style="margin-top: 20px;">
-            </div>
-
-            <div class="countdown-container">
                 <h2>Reservation Deadline Countdown</h2>
                 <div class="countdown-label">Days</div>
                 <div class="countdown-value days">00</div>
@@ -70,19 +58,15 @@
             </div>
 
             <script>
-                const countdownContainers = document.querySelectorAll('.countdown-container');
+                const daysElement = document.querySelector('.days');
+                const hoursElement = document.querySelector('.hours');
+                const minutesElement = document.querySelector('.minutes');
+                const secondsElement = document.querySelector('.seconds');
 
-        countdownContainers.forEach(container => {
-            const daysElement = container.querySelector('.days');
-                const hoursElement = container.querySelector('.hours');
-                const minutesElement = container.querySelector('.minutes');
-                const secondsElement = container.querySelector('.seconds');
-
-                // Set the reservation deadline date and time (YYYY-MM-DDTHH:MM)
                 const reservationDeadline = new Date('2024-06-01T12:00:00').getTime();
 
                 function updateCountdown() {
-                const now = new Date().getTime();
+            const now = new Date().getTime();
                 const distance = reservationDeadline - now;
 
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -96,14 +80,11 @@
                 secondsElement.textContent = seconds < 10 ? '0' + seconds : seconds;
 
                 if (distance < 0) {
-                    // Reservation deadline has passed, update UI accordingly
-                    container.innerHTML = '<h2>Reservation Deadline Expired</h2>';
-                }
+                    document.querySelector('.countdown-container').innerHTML = '<h2>Reservation Deadline Expired</h2>';
             }
+        }
 
-                // Update the countdown every second
                 setInterval(updateCountdown, 1000);
-        });
             </script>
         </body>
 
