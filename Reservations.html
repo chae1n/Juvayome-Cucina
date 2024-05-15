@@ -1,219 +1,204 @@
-<!DOCTYPE html >
-    <html>
-        <head>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link rel="stylesheet" href="style.css">
-                <title>Juvayome | Reservations</title>
-                <style>
-                    body {
-                        font - family: Arial, sans-serif;
-                    background-color: #f4f4f4;
-                    margin: 0;
-                    padding: 20px;
-                    color: #333;
-    }
-
-                    header {
-                        background: #007BFF;  
-                    padding: 10px 0;
-                    color: white;
-                    text-align: center;
-    }
-
-                    .container {
-                        width: 90%;
-                    max-width: 1200px;
-                    margin: 0 auto;
-    }
-
-                    .logo a {
-                        color: white;
-                    text-decoration: none;
-                    font-size: 24px;
-    }
-
-                    nav ul {
-                        list - style - type: none;
-                    padding: 0;
-    }
-
-                    nav ul li {
-                        display: inline;
-                    margin-right: 20px;
-    }
-
-                    nav ul li a {
-                        color: white;
-                    text-decoration: none;
-                    font-weight: bold;
-    }
-
-                    nav ul li a:hover {
-                        text - decoration: underline;
-    }
-
-                    /* Styles for the reservation container */
-                    .reservation-container {
-                        text - align: center;
-                    margin-top: 30px;
-    }
-
-                    input[type="date"], button {
-                        padding: 10px;
-                    font-size: 16px;
-                    margin-top: 10px;  /* Space above the input and button */
-    }
-
-                    button {
-                        background - color: #28a745;  /* Green color for the button */
-                    color: white;
-                    border: none;
-                    cursor: pointer;
-                    border-radius: 5px;
-    }
-
-                    button:hover {
-                        background - color: #218838;  /* Darker green on hover */
-    }
-
-                    /* Styling for the countdown container */
-                    .countdown-container {
-                        background - color: white;
-                    padding: 20px;
-                    border-radius: 10px;
-                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                    margin-top: 20px;
-                    text-align: center;
-    }
-
-                    .countdown-label {
-                        font - size: 18px;
-                    color: #666;
-    }
-
-                    .countdown-value {
-                        font - size: 40px;
-                    font-weight: bold;
-                    color: #000;
-                    margin: 5px 0;
-    }
-                </style>
-        </head>
-        <body>
-            <header>
-                <nav id="navbar">
-                    <div class="container">
-                        <h1 class="logo"><a href="index.html">Juvayome Cucina</a></h1>
-                        <ul>
-                            <li><a class="current" href="Reservations.html">Reservations</a></li>
-                            <li><a href="menu.html">Menu</a></li>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-            <div class="reservation-container">
-                <h2>Select Reservation Date</h2>
-                <input type="date" id="reservation-date">
-                    <button onclick="setReservation()">Set Reservation</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Juvayome | Reservations</title>
+    <style>
+        /* Corrected CSS: No spaces in property names */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        header {
+            background: #007BFF; /* Bright blue background for the header */
+            padding: 10px 0;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .reservation-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        input[type="date"], button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #28a745; /* Green color for the button */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        .countdown-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        .countdown-label {
+            font-size: 18px;
+            color: #666;
+        }
+        .countdown-value {
+            font-size: 40px;
+            font-weight: bold;
+            color: #000;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html">Juvayome Cucina</a></h1>
+                <ul>
+                    <li><a class="current" href="Reservations.html">Reservations</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
-            <div class="countdown-container" id="countdown-container" style="display: none;">
-                <h2>Reservation Deadline Countdown</h2>
-                <div class="countdown-label">Days</div>
-                <div class="countdown-value days">00</div>
-                <div class="countdown-label">Hours</div>
-                <div class="countdown-value hours">00</div>
-                <div class="countdown-label">Minutes</div>
-                <div class="countdown-value minutes">00</div>
-                <div class="countdown-label">Seconds</div>
-                <div class="countdown-value seconds">00</div>
-                <p>Please complete your reservation before the countdown ends.</p>
-            </div>
-            <script>
-                let interval;
-                const countdownContainer = document.getElementById('countdown-container');
-                const dateInput = document.getElementById('reservation-date');
+        </nav>
+    </header>
+    <div class="reservation-container">
+        <h2>Select Reservation Date</h2>
+        <input type="date" id="reservation-date">
+        <button onclick="setReservation()">Set Reservation</button>
+        <p id="error-message" style="color: red; display: none;"></p> <!-- Error message display -->
+    </div>
+    <div class="countdown-container" id="countdown-container" style="display: none;">
+        <h2>Reservation Deadline Countdown</h2>
+        <div class="countdown-label">Days</div>
+        <div class="countdown-value days">00</div>
+        <div class="countdown-label">Hours</div>
+        <div class="countdown-value hours">00</div>
+        <div class="countdown-label">Minutes</div>
+        <div the "countdown-value minutes">00</div>
+        <div class="countdown-label">Seconds</div>
+        <div class="countdown-value seconds">00</div>
+        <p>Please complete your reservation before the countdown ends.</p>
+    </div>
+<script>
+    let interval;
+    const countdownContainer = document.getElementById('countdown-container');
+    const dateInput = document.getElementById('reservation-date');
 
-                function setReservation() {
+    function setReservation() {
         const selectedDate = dateInput.value;
-                if (!selectedDate) {
-                    showError("Please select a valid date.");
-                return;
+        if (!selectedDate) {
+            showError("Please select a valid date.");
+            return;
         }
-                // Constructing a date string with a time and a UTC timezone identifier 'Z'
-                const reservationDeadline = new Date(selectedDate + 'T23:59:59Z');
-                if (isNaN(reservationDeadline.getTime())) {
-                    showError("Invalid date selected.");
-                return;
+        const reservationDeadline = new Date(selectedDate + 'T23:59:59Z');
+        if (isNaN(reservationDeadline.getTime())) {
+            showError("Invalid date selected.");
+            return;
         }
-                localStorage.setItem('reservationDeadline', reservationDeadline.toISOString());
-                countdownContainer.style.display = 'block'; // Make sure to display the container
-                startClock(reservationDeadline.getTime());
+        localStorage.setItem('reservationDeadline', reservationDeadline.toISOString());
+        countdownContainer.style.display = 'block'; // Make sure to display the container
+        startClock(reservationDeadline.getTime());
     }
 
-                function startClock(endTime) {
+    function startClock(endTime) {
         if (interval) clearInterval(interval);
         interval = setInterval(() => {
-                    updateCountdown(endTime);
+            updateCountdown(endTime);
         }, 1000);
     }
 
-                function updateCountdown(endTimestamp) {
+    function updateCountdown(endTimestamp) {
         const now = new Date().getTime();
-                const timeLeft = getTimeLeft(endTimestamp - now);
+        const timeLeft = getTimeLeft(endTimestamp - now);
 
-                if (timeLeft.total < 0) {
-                    clearInterval(interval);
-                countdownContainer.innerHTML = '<h2>Reservation Deadline Expired</h2>';
-                return;
+        if (timeLeft.total < 0) {
+            clearInterval(interval);
+            countdownContainer.innerHTML = '<h2>Reservation Deadline Expired</h2>';
+            return;
         }
 
-                // Update UI
-                document.querySelector('.days').textContent = formatTime(timeLeft.days);
-                document.querySelector('.hours').textContent = formatTime(timeLeft.hours);
-                document.querySelector('.minutes').textContent = formatTime(timeLeft.minutes);
-                document.querySelector('.seconds').textContent = formatTime(timeLeft.seconds);
+        // Update UI
+        document.querySelector('.days').textContent = formatTime(timeLeft.days);
+        document.querySelector('.hours').textContent = formatTime(timeLeft.hours);
+        document.querySelector('.minutes').textContent = formatTime(timeLeft.minutes);
+        document.querySelector('.seconds').textContent = formatTime(timeLeft.seconds);
     }
 
-                function getTimeLeft(distance) {
+    function getTimeLeft(distance) {
         return {
-                    total: distance,
-                days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-                seconds: Math.floor((distance % (1000 * 60)) / 1000)
+            total: distance,
+            days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+            minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+            seconds: Math.floor((distance % (1000 * 60)) / 1000)
         };
     }
 
-                function formatTime(time) {
+    function formatTime(time) {
         return time < 10 ? '0' + time : time;
     }
 
-                function showError(message) {
+    function showError(message) {
         const errorMessage = document.getElementById('error-message');
-                errorMessage.textContent = message;
-                errorMessage.style.display = 'block';
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
     }
 
-                // Check for saved date in local storage
-                window.onload = function() {
+    // Check for saved date in local storage
+    window.onload = function() {
         const savedDate = localStorage.getItem('reservationDeadline');
-                if (savedDate) {
+        if (savedDate) {
             const savedDateTime = new Date(savedDate);
             if (savedDateTime > new Date()) { // Check if the saved date is still in the future
-                    dateInput.value = savedDateTime.toISOString().substring(0, 10);
+                dateInput.value = savedDateTime.toISOString().substring(0, 10);
                 countdownContainer.style.display = 'block';
                 startClock(savedDateTime.getTime());
             } else {
-                    localStorage.removeItem('reservationDeadline'); // Clear expired date
+                localStorage.removeItem('reservationDeadline'); // Clear expired date
             }
         }
     };
 
-                // Listen for changes in the date input
-                dateInput.addEventListener('change', setReservation);
-            </script>
-        </body>
-    </html>
+    // Listen for changes in the date input
+    dateInput.addEventListener('change', setReservation);
+</script>
+</body>
+</html>
