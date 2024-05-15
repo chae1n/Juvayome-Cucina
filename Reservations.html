@@ -135,59 +135,71 @@
     </div>
 
     <script>
-        let interval; // Variable to store interval ID
+        let interval;
         const countdownContainer = document.getElementById('countdown-container');
         const dateInput = document.getElementById('reservation-date');
 
         function setReservation() {
-            const selectedDate = dateInput.value + 'T23:59:59'; // Set end of the day
+            const selectedDate = dateInput.value + 'T23:59:59';
             if (selectedDate) {
                 localStorage.setItem('reservationDeadline', selectedDate);
-                startClock(new Date(selectedDate).getTime());
+                startClock(selectedDate);
             }
         }
 
         function startClock(endTime) {
-            if (interval) clearInterval(interval); // Clear existing interval
+            const endTimestamp = new Date(endTime).getTime();
+            if (interval) clearInterval(interval);
             interval = setInterval(() => {
-                updateCountdown(endTime);
+                updateCountdown(endTimestamp);
             }, 1000);
         }
 
-        function updateCountdown(endTime) {
+        function updateCountdown(endTimestamp) {
             const now = new Date().getTime();
-            const distance = endTime - now;
-            if (distance < 0) {
+            const timeLeft = getTimeLeft(endTimestamp - now);
+
+            if (timeLeft.total < 0) {
                 clearInterval(interval);
                 countdownContainer.innerHTML = '<h2>Reservation Deadline Expired</h2>';
                 return;
             }
-            displayTimeLeft(distance);
+
+            // Update UI
+            document.querySelector('.days').textContent = formatTime(timeLeft.days);
+            document.querySelector('.hours').textContent = formatTime(timeLeft.hours);
+            document.querySelector('.minutes').textContent = formatTime(timeLeft.minutes);
+            document.querySelector('.seconds').textContent = formatTime(timeLeft.seconds);
         }
 
-        function displayTimeLeft(distance) {
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.querySelector('.days').textContent = days < 10 ? '0' + days : days;
-            document.querySelector('.hours').textContent = hours < 10 ? '0' + hours : hours;
-            document.querySelector('.minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
-            document.querySelector('.seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+        function getTimeLeft(distance) {
+            return {
+                total: distance,
+                days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+                seconds: Math.floor((distance % (1000 * 60)) / 1000)
+            };
         }
 
-        // Check local storage for existing countdown
-       window.onload = function() {
-        const savedDate = localStorage.getItem('reservationDeadline');
-        if (savedDate) {
-        dateInput.value = new Date(savedDate).toISOString().substring(0, 10); // Sets the input to match the saved date
-        startClock(new Date(savedDate).getTime());
-    }
-};
-</script>
+        function formatTime(time) {
+            return time < 10 ? '0' + time : time;
+        }
+
+        // Check for saved date in local storage
+        window.onload = function() {
+            const savedDate = localStorage.getItem('reservationDeadline');
+            if (savedDate) {
+                dateInput.value = new Date(savedDate).toISOString().substring(0, 10);
+                startClock(savedDate);
+            }
+        };
+
+        // Listen for changes in the date input
+        dateInput.addEventListener('change', () => {
+            if (interval) clearInterval(interval); // Reset the current countdown
+            setReservation(); // Set a new reservation
+        });
+    </script>
 </body>
 </html>
-
-
-
