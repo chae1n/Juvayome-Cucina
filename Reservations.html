@@ -1,103 +1,106 @@
-< !DOCTYPE html >
-    <html lang="en">
-
-        <head>
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width" />
-            <link rel="stylesheet" href="style.css">
-                <title>Juvayome | Reservations</title>
-                <style>
-                    body {
-                        font - family: Arial, sans-serif;
-                    background-color: #f4f4f4;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Juvayome | Reservations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
-
-                    .countdown-container {
-                        text - align: center;
-                    margin-top: 50px;
+        .countdown-container {
+            text-align: center;
+            margin-top: 50px;
         }
-
-                    .countdown-label {
-                        font - size: 20px;
-                    margin-bottom: 5px;
+        .countdown-label {
+            font-size: 20px;
+            margin-bottom: 5px;
         }
-
-                    .countdown-value {
-                        font - size: 40px;
-                    font-weight: bold;
-                    color: #333;
+        .countdown-value {
+            font-size: 40px;
+            font-weight: bold;
+            color: #333;
         }
-                </style>
-        </head>
-
-        <body>
-            <header>
-                <nav id="navbar">
-                    <div class="container">
-                        <h1 class="logo"><a href="index.html">Juvayome Cucina</a></h1>
-                        <ul>
-                            <li><a class="current" href="Reservations.html">Reservations</a></li>
-                            <li><a href="menu.html">Menu</a></li>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-            <div class="reservation-container">
-                <h2>Select Reservation Date</h2>
-                <input type="date" id="reservation-date">
-                    <button onclick="setReservation()">Set Reservation</button>
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html">Juvayome Cucina</a></h1>
+                <ul>
+                    <li><a class="current" href="Reservations.html">Reservations</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
-            <div class="countdown-container" id="countdown-container" style="display: none;">
-                <h2>Reservation Deadline Countdown</h2>
-                <div class="countdown-label">Days</div>
-                <div class="countdown-value days">00</div>
-                <div class="countdown-label">Hours</div>
-                <div class="countdown-value hours">00</div>
-                <div class="countdown-label">Minutes</div>
-                <div class="countdown-value minutes">00</div>
-                <div class="countdown-label">Seconds</div>
-                <div class="countdown-value seconds">00</div>
-                <p>Please complete your reservation before the countdown ends.</p>
-            </div>
+        </nav>
+    </header>
+    <div class="reservation-container">
+        <h2>Select Reservation Date</h2>
+        <input type="date" id="reservation-date">
+        <button onclick="setReservation()">Set Reservation</button>
+    </div>
+    <div class="countdown-container" id="countdown-container" style="display: none;">
+        <h2>Reservation Deadline Countdown</h2>
+        <div class="countdown-label">Days</div>
+        <div class="countdown-value days">00</div>
+        <div class="countdown-label">Hours</div>
+        <div class="countdown-value hours">00</div>
+        <div class="countdown-label">Minutes</div>
+        <div class="countdown-value minutes">00</div>
+        <div class="countdown-label">Seconds</div>
+        <div class="countdown-value seconds">00</div>
+        <p>Please complete your reservation before the countdown ends.</p>
+    </div>
 
-            <script>
-                const daysElement = document.querySelector('.days');
-                const hoursElement = document.querySelector('.hours');
-                const minutesElement = document.querySelector('.minutes');
-                const secondsElement = document.querySelector('.seconds');
-                const countdownContainer = document.getElementById('countdown-container');
+    <script>
+        let interval; // Variable to store interval ID
+        const countdownContainer = document.getElementById('countdown-container');
+        const dateInput = document.getElementById('reservation-date');
 
-                function setReservation() {
-            const selectedDate = document.getElementById('reservation-date').value;
-                const reservationDeadline = new Date(selectedDate + 'T12:00:00').getTime();
-                countdownContainer.style.display = 'block';
-                updateCountdown(reservationDeadline);
-            setInterval(() => {
-                    updateCountdown(reservationDeadline);
+        function setReservation() {
+            const selectedDate = dateInput.value + 'T23:59:59'; // Set end of the day
+            if (selectedDate) {
+                localStorage.setItem('reservationDeadline', selectedDate);
+                startClock(new Date(selectedDate).getTime());
+            }
+        }
+
+        function startClock(endTime) {
+            if (interval) clearInterval(interval); // Clear existing interval
+            interval = setInterval(() => {
+                updateCountdown(endTime);
             }, 1000);
         }
 
-                function updateCountdown(reservationDeadline) {
+        function updateCountdown(endTime) {
             const now = new Date().getTime();
-                const distance = reservationDeadline - now;
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                daysElement.textContent = days < 10 ? '0' + days : days;
-                hoursElement.textContent = hours < 10 ? '0' + hours : hours;
-                minutesElement.textContent = minutes < 10 ? '0' + minutes : minutes;
-                secondsElement.textContent = seconds < 10 ? '0' + seconds : seconds;
-
-                if (distance < 0) {
-                    countdownContainer.innerHTML = '<h2>Reservation Deadline Expired</h2>';
+            const distance = endTime - now;
+            if (distance < 0) {
+                clearInterval(interval);
+                countdownContainer.innerHTML = '<h2>Reservation Deadline Expired</h2>';
+                return;
             }
+            displayTimeLeft(distance);
         }
-            </script>
-        </body>
 
-    </html>
+        function displayTimeLeft(distance) {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.querySelector('.days').textContent = days < 10 ? '0' + days : days;
+            document.querySelector('.hours').textContent = hours < 10 ? '0' + hours : hours;
+            document.querySelector('.minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+            document.querySelector('.seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        // Check local storage for existing countdown
+        window.onload = function() {
+            const savedDate = localStorage.getItem('reservationDeadline');
+            if (savedDate
