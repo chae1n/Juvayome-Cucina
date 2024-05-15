@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .countdown-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .countdown-label {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .countdown-value {
+      font-size: 40px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown-container">
+    <div class="countdown-label">Days</div>
+    <div id="days" class="countdown-value">00</div>
+    <div class="countdown-label">Hours</div>
+    <div id="hours" class="countdown-value">00</div>
+    <div class="countdown-label">Minutes</div>
+    <div id="minutes" class="countdown-value">00</div>
+    <div class="countdown-label">Seconds</div>
+    <div id="seconds" class="countdown-value">00</div>
+    <input type="datetime-local" id="date-input" style="margin-top: 20px;">
+  </div>
+
+  <script>
+    const daysElement = document.getElementById('days');
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+    const dateInput = document.getElementById('date-input');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const eventDate = new Date(dateInput.value).getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      daysElement.textContent = days < 10 ? '0' + days : days;
+      hoursElement.textContent = hours < 10 ? '0' + hours : hours;
+      minutesElement.textContent = minutes < 10 ? '0' + minutes : minutes;
+      secondsElement.textContent = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+
+</html>
