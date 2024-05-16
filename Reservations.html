@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <title>Juvayome | Reservations</title>
     <style>
-        /* Corrected CSS: No spaces in property names */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -15,7 +14,7 @@
             color: #333;
         }
         header {
-            background: #007BFF; /* Bright blue background for the header */
+            background: #007BFF;
             padding: 10px 0;
             color: white;
             text-align: center;
@@ -56,14 +55,14 @@
             margin-top: 10px;
         }
         button {
-            background-color: #28a745; /* Green color for the button */
+            background-color: #28a745;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 5px;
         }
         button:hover {
-            background-color: #218838; /* Darker green on hover */
+            background-color: #218838;
         }
         .countdown-container {
             background-color: white;
@@ -72,6 +71,7 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             margin-top: 20px;
             text-align: center;
+            aria-live: "polite";
         }
         .countdown-label {
             font-size: 18px;
@@ -101,9 +101,9 @@
     </header>
     <div class="reservation-container">
         <h2>Select Reservation Date</h2>
-        <input type="date" id="reservation-date">
+        <input type="date" id="reservation-date" aria-label="Select reservation date">
         <button onclick="setReservation()">Set Reservation</button>
-        <p id="error-message" style="color: red; display: none;"></p> <!-- Error message display -->
+        <p id="error-message" style="color: red; display: none;"></p>
     </div>
     <div class="countdown-container" id="countdown-container" style="display: none;">
         <h2>Reservation Deadline Countdown</h2>
@@ -112,7 +112,7 @@
         <div class="countdown-label">Hours</div>
         <div class="countdown-value hours">00</div>
         <div class="countdown-label">Minutes</div>
-        <div the "countdown-value minutes">00</div>
+        <div class="countdown-value minutes">00</div>
         <div class="countdown-label">Seconds</div>
         <div class="countdown-value seconds">00</div>
         <p>Please complete your reservation before the countdown ends.</p>
@@ -128,13 +128,14 @@
             showError("Please select a valid date.");
             return;
         }
-        const reservationDeadline = new Date(selectedDate + 'T23:59:59Z');
-        if (isNaN(reservationDeadline.getTime())) {
-            showError("Invalid date selected.");
+        const reservationDeadline = new Date(selectedDate + 'T23:59:59Z'); // Ensure UTC is used
+        if (isNaN(reservationDeadline.getTime()) || reservationDeadline <= new Date()) {
+            showError("Please select a future date.");
             return;
         }
+        hideError(); // Hide error message on successful validation
         localStorage.setItem('reservationDeadline', reservationDeadline.toISOString());
-        countdownContainer.style.display = 'block'; // Make sure to display the container
+        countdownContainer.style.display = 'block';
         startClock(reservationDeadline.getTime());
     }
 
@@ -155,7 +156,6 @@
             return;
         }
 
-        // Update UI
         document.querySelector('.days').textContent = formatTime(timeLeft.days);
         document.querySelector('.hours').textContent = formatTime(timeLeft.hours);
         document.querySelector('.minutes').textContent = formatTime(timeLeft.minutes);
@@ -182,22 +182,25 @@
         errorMessage.style.display = 'block';
     }
 
-    // Check for saved date in local storage
+    function hideError() {
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.style.display = 'none';
+    }
+
     window.onload = function() {
         const savedDate = localStorage.getItem('reservationDeadline');
         if (savedDate) {
             const savedDateTime = new Date(savedDate);
-            if (savedDateTime > new Date()) { // Check if the saved date is still in the future
+            if (savedDateTime > new Date()) {
                 dateInput.value = savedDateTime.toISOString().substring(0, 10);
                 countdownContainer.style.display = 'block';
                 startClock(savedDateTime.getTime());
             } else {
-                localStorage.removeItem('reservationDeadline'); // Clear expired date
+                localStorage.removeItem('reservationDeadline');
             }
         }
     };
 
-    // Listen for changes in the date input
     dateInput.addEventListener('change', setReservation);
 </script>
 </body>
