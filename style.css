@@ -74,6 +74,18 @@ p {
 .animation {
     animation: slidein 1s ease forwards; /* Apply animation to the element */
 }
+.logo {
+    animation: bounceLogo 1s infinite alternate;
+  }
+
+@keyframes bounceLogo {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
 
 #navbar {
   background-color: rgb(98, 40, 233);
