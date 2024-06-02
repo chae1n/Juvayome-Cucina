@@ -26,7 +26,7 @@
   </header>
 
   <h2>Contact Us</h2>
-  <form id="contactForm" method="POST" action="https://jsonplaceholder.typicode.com/posts">
+  <form id="contactForm" method="POST" action="https://postman-echo.com/post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name">
 
@@ -67,9 +67,9 @@
       // If all validations pass, submit the form
       var formData = new FormData(document.getElementById('contactForm'));
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
+      xhr.open('POST', 'https://postman-echo.com/post', true);
       xhr.onload = function () {
-        if (xhr.status == 201) {
+        if (xhr.status == 200) {
           response.textContent = 'Form submitted successfully';
           document.getElementById('contactForm').reset(); // Clear form fields
           response.textContent += '\nResponse from server: ' + xhr.responseText; // Display response from server
