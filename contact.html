@@ -72,6 +72,7 @@
         if (xhr.status == 200) {
           response.textContent = 'Form submitted successfully';
           document.getElementById('contactForm').reset(); // Clear form fields
+          response.textContent += '\nResponse from server: ' + xhr.responseText; // Display response from server
         } else {
           response.textContent = 'Error submitting form. Please try again later.';
         }
