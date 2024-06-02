@@ -69,19 +69,18 @@
       var xhr = new XMLHttpRequest();
       xhr.open('POST', 'https://postman-echo.com/post', true);
       xhr.onload = function () {
-        xhr.onload = function () {
-          if (xhr.status == 200) {
-            response.textContent = 'Form submitted successfully';
-            document.getElementById('contactForm').reset(); // Clear form fields
-          } else {
-            response.textContent = 'Error submitting form. Please try again later.';
-          }
-        };
-        xhr.send(formData);
-      }
+        if (xhr.status == 200) {
+          response.textContent = 'Form submitted successfully';
+          document.getElementById('contactForm').reset(); // Clear form fields
+        } else {
+          response.textContent = 'Error submitting form. Please try again later.';
+        }
+      };
+      xhr.send(formData);
+    }
 
-      // Add event listener to the form submit button
-      document.getElementById('contactForm').addEventListener('submit', validateForm);
+    // Add event listener to the form submit button
+    document.getElementById('contactForm').addEventListener('submit', validateForm);
   </script>
 
   <h2>Opening Our New Location on Earth!</h2>
