@@ -64,21 +64,23 @@
         return;
       }
 
-      // If all validations pass, submit the form
+      // If all validations pass, submit the form using fetch API
       var formData = new FormData(document.getElementById('contactForm'));
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://postman-echo.com/post', true);
-      xhr.onload = function () {
-        if (xhr.status == 200) {
-          var jsonResponse = JSON.parse(xhr.responseText);
-          response.textContent = 'Form submitted successfully';
-          document.getElementById('contactForm').reset(); // Clear form fields
-          response.textContent += '\nResponse from server: ' + JSON.stringify(jsonResponse, null, 2); // Display response from server
-        } else {
-          response.textContent = 'Error submitting form. Please try again later.';
-        }
-      };
-      xhr.send(formData);
+
+      fetch('https://postman-echo.com/post', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        response.textContent = 'Form submitted successfully';
+        document.getElementById('contactForm').reset(); // Clear form fields
+        response.textContent += '\nResponse from server: ' + JSON.stringify(data, null, 2); // Display response from server
+      })
+      .catch(error => {
+        response.textContent = 'Error submitting form. Please try again later.';
+        console.error('Error:', error);
+      });
     }
 
     // Add event listener to the form submit button
