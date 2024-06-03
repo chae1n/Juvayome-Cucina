@@ -70,9 +70,10 @@
       xhr.open('POST', 'https://postman-echo.com/post', true);
       xhr.onload = function () {
         if (xhr.status == 200) {
+          var jsonResponse = JSON.parse(xhr.responseText);
           response.textContent = 'Form submitted successfully';
           document.getElementById('contactForm').reset(); // Clear form fields
-          response.textContent += '\nResponse from server: ' + xhr.responseText; // Display response from server
+          response.textContent += '\nResponse from server: ' + JSON.stringify(jsonResponse, null, 2); // Display response from server
         } else {
           response.textContent = 'Error submitting form. Please try again later.';
         }
