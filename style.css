@@ -40,26 +40,27 @@ body {
 }
 
 #toggleButton {
-  border-radius: 50%; 
-  padding: 10px 20px; 
-}
-
-.happyHourDefaultStyle {
-  background-color: #bc5cf0; 
-  color: white; 
+  background-color: white; 
+  color: purple; 
   border: none; 
+  border-radius: 12px;
+  padding: 10px 20px; 
+  font-weight: bolder;
+}
+ .happyHourDefaultStyle {
+  background-color: #bc5cf0;
 }
 
 .crazyStyle {
-  background-color: #a1f250; 
-  color: black; 
-  font-family: cursive; 
+  background-color: #a1f250;
+  font-family: cursive ;
+  color:black;
 }
 
 #toggleButton:hover {
   cursor: pointer; 
   opacity: 0.8; 
-  background-color: #8a2be2; 
+  background-color: lightcyan; 
 }
 
 p {
