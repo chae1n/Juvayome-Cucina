@@ -39,14 +39,24 @@ body {
   text-align: center;
 }
 
-.happyHourDefaultStyle {
-  background-color: #bc5cf0;
+#toggleButton {
+  border-radius: 50%; 
+  background-color: #bc5cf0; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
 }
 
-.crazyStyle {
-    /* Your alternate styles here */
-  background-color: #a1f250;
+#toggleButton.crazyStyle {
+  background-color: #a1f250; 
+  color: black; 
   font-family: cursive;
+}
+
+#toggleButton:hover {
+  cursor: pointer; 
+  opacity: 0.8; 
+  background-color: #8a2be2;
 }
 
 p {
