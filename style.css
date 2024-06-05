@@ -41,22 +41,25 @@ body {
 
 #toggleButton {
   border-radius: 50%; 
-  background-color: #bc5cf0; 
-  color: white; 
-  border: none; 
   padding: 10px 20px; 
 }
 
-#toggleButton.crazyStyle {
+.happyHourDefaultStyle {
+  background-color: #bc5cf0; 
+  color: white; 
+  border: none; 
+}
+
+.crazyStyle {
   background-color: #a1f250; 
   color: black; 
-  font-family: cursive;
+  font-family: cursive; 
 }
 
 #toggleButton:hover {
   cursor: pointer; 
   opacity: 0.8; 
-  background-color: #8a2be2;
+  background-color: #8a2be2; 
 }
 
 p {
