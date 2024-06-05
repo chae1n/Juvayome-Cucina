@@ -186,6 +186,11 @@ tr{
   text-align: center;
 }
 
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 #contactForm input[type="text"],
 #contactForm input[type="email"],
@@ -213,6 +218,10 @@ tr{
   background-color: #45a049;
 }
 
+#contactForm label {
+  text-align: center; 
+  margin-top: 10px;
+}
 
 .error {
   color: red;
