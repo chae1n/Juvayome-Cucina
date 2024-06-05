@@ -195,7 +195,7 @@ tr{
 #contactForm input[type="text"],
 #contactForm input[type="email"],
 #contactForm textarea {
-  width: 100%;
+  width: 25%;
   padding: 10px;
   margin: 5px 0;
   box-sizing: border-box;
