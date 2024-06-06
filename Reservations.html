@@ -10,7 +10,7 @@
         /* Basic styling for the page */
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -21,8 +21,18 @@
             font-size: 24px;
         }
         .reservation-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             margin-top: 30px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
         }
         input[type="date"], button {
             padding: 10px;
@@ -75,8 +85,12 @@
       </header>
     <div class="reservation-container">
         <h2>Select Reservation Date</h2>
-        <input type="date" id="reservation-date" aria-label="Select reservation date">
-        <button onclick="setReservation()">Set Reservation</button>
+        <div class="form-group">
+            <input type="date" id="reservation-date" aria-label="Select reservation date">
+        </div>
+        <div class="form-group">
+            <button onclick="setReservation()">Set Reservation</button>
+        </div>
         <p id="error-message" style="color: red; display: none;"></p> <!-- Error message display -->
     </div>
     <div class="countdown-container" id="countdown-container">
