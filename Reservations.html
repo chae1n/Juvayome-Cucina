@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta viewport="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Juvayome | Reservations</title>
@@ -10,62 +10,57 @@
         /* Basic styling for the page */
         .container {
             width: 90%;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
         }
-        .logo a {
-            color: rgb(185, 99, 255);
-            text-decoration: none;
-            font-size: 24px;
-        }
-        .reservation-container {
+        .flex-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            margin-top: 50px;
+        }
+        .reservation-container, .countdown-container {
+            width: 70%;
             text-align: center;
-            margin-top: 30px;
+            margin: 20px 0;
         }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        input[type="date"], button {
+        .reservation-container input[type="date"], .reservation-container button {
             padding: 10px;
-            font-size: 16px;
+            font-size: 15px;
             margin-top: 10px;
         }
-        button {
+        .reservation-container button {
             background-color: #28a745;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 5px;
         }
-        button:hover {
+        .reservation-container button:hover {
             background-color: #218838;
         }
         .countdown-container {
             background-color: rgb(185, 99, 255);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-top: 20px;
-            text-align: center;
         }
         .countdown-label {
             font-size: 18px;
-            color: #393838;
+            color: #464545;
         }
         .countdown-value {
-            font-size: 40px;
+            font-size: 28px;
             font-weight: bold;
             color: #000;
             margin: 5px 0;
+        }
+        h2{
+            font-family: 'Inconsolata', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            color: beige;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -83,26 +78,26 @@
           </div>
         </nav>
       </header>
-    <div class="reservation-container">
-        <h2>Select Reservation Date</h2>
-        <div class="form-group">
-            <input type="date" id="reservation-date" aria-label="Select reservation date">
+    <div class="container">
+        <div class="flex-container">
+            <div class="reservation-container">
+                <h2>Book Your Next Reservation With Us</h2>
+                <input type="date" id="reservation-date" aria-label="Select reservation date">
+                <button onclick="setReservation()">Set Reservation</button>
+                <p id="error-message" style="color: red; display: none;"></p> <!-- Error message display -->
+            </div>
+            <div class="countdown-container" id="countdown-container">
+                <h2>Reservation Deadline Countdown</h2>
+                <div class="countdown-label">Days</div>
+                <div class="countdown-value days">00</div>
+                <div class="countdown-label">Hours</div>
+                <div class="countdown-value hours">00</div>
+                <div class="countdown-label">Minutes</div>
+                <div class="countdown-value minutes">00</div>
+                <div class="countdown-label">Seconds</div>
+                <div class="countdown-value seconds">00</div>
+            </div>
         </div>
-        <div class="form-group">
-            <button onclick="setReservation()">Set Reservation</button>
-        </div>
-        <p id="error-message" style="color: red; display: none;"></p> <!-- Error message display -->
-    </div>
-    <div class="countdown-container" id="countdown-container">
-        <h2>Reservation Deadline Countdown</h2>
-        <div class="countdown-label">Days</div>
-        <div class="countdown-value days">00</div>
-        <div class="countdown-label">Hours</div>
-        <div class="countdown-value hours">00</div>
-        <div class="countdown-label">Minutes</div>
-        <div class="countdown-value minutes">00</div>
-        <div class="countdown-label">Seconds</div>
-        <div class="countdown-value seconds">00</div>
     </div>
 <script>
     let interval; // Stores the interval ID for the countdown
