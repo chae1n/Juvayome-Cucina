@@ -1,19 +1,23 @@
+/* Basic styling for the entire page */
 html {
   height: 100%;
   width: 100%;
-  background-color:#ccc;
-}
-table {
-  border: 1px solid black;
-  th {
-    background-color: palegoldenrod;
-  }
-  caption {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
+  background-color: #ccc;
 }
 
+/* Styling for tables */
+table {
+  border: 1px solid black;
+}
+table th {
+  background-color: palegoldenrod;
+}
+table caption {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* General styling for tables, table headers, and table data cells */
 table, th, td {
   border: 1px solid black;
   font-family: Cambria;
@@ -21,6 +25,7 @@ table, th, td {
   margin-right: auto;
 }
 
+/* Styling for the heading */
 h1 {
   font-family: 'Inconsolata', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -30,6 +35,7 @@ h1 {
   color: #fff;
 }
 
+/* General body styling */
 body {
   background-color: rgb(74, 19, 202);
   font-family: 'Inconsolata', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -39,93 +45,102 @@ body {
   text-align: center;
 }
 
+/* Styling for the toggle button */
 #toggleButton {
-  background-color: white; 
-  color: purple; 
-  border: none; 
+  background-color: white;
+  color: purple;
+  border: none;
   border-radius: 12px;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   font-weight: bolder;
 }
- .happyHourDefaultStyle {
+
+/* Default style for the happy hour section */
+.happyHourDefaultStyle {
   background-color: #bc5cf0;
 }
 
+/* Styling for the crazy style */
 .crazyStyle {
   background-color: #a1f250;
-  font-family: cursive ;
-  color:black;
+  font-family: cursive;
+  color: black;
 }
 
+/* Hover effect for the toggle button */
 #toggleButton:hover {
-  cursor: pointer; 
-  opacity: 0.8; 
-  background-color: lightcyan; 
+  cursor: pointer;
+  opacity: 0.8;
+  background-color: lightcyan;
 }
 
+/* Styling for paragraphs */
 p {
   border: 1px solid black;
 }
 
-
 /* CSS for transitions */
 .transition {
-    transition-property: background-color, color; /* Properties to transition */
-    transition-duration: 0.3s; /* Duration of the transition */
-    transition-timing-function: ease; /* Timing function for the transition */
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }
 
 /* CSS for animations */
 @keyframes slidein {
-    from {
-        transform: translateX(-100%); /* Initial state of the animation */
-    }
-    to {
-        transform: translateX(0); /* Final state of the animation */
-    }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
-
 .animation {
-    animation: slidein 1s ease forwards; /* Apply animation to the element */
+  animation: slidein 1s ease forwards;
 }
 .logo {
-    animation: bounceLogo 1s infinite alternate;
-  }
-
+  animation: bounceLogo 1s infinite alternate;
+}
 @keyframes bounceLogo {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-10px);
-    }
+  0% {
+    transform: translateY(0);
   }
+  100% {
+    transform: translateY(-10px);
+  }
+}
 
+/* Styling for the navbar */
 #navbar {
   background-color: rgb(98, 40, 233);
   color: #fff;
   overflow: auto;
 }
 
+/* Styling for navbar links */
 #navbar a {
   color: #fff;
 }
 
+/* Styling for navbar heading */
 #navbar h1 {
   float: center;
   padding-top: 10px;
   padding-bottom: 20px;
 }
 
+/* Styling for navbar list */
 #navbar ul {
   list-style: none;
   float: right;
 }
 
+/* Styling for navbar list items */
 #navbar ul li {
   float: center;
 }
 
+/* Styling for navbar buttons */
 #navbar button {
   display: inline-block;
   font-size: 14px;
@@ -136,11 +151,13 @@ p {
   cursor: pointer;
 }
 
-#navbar button:hover{
-    background: rgb(103, 76, 255);
-    color: #fff;
+/* Hover effect for navbar buttons */
+#navbar button:hover {
+  background: rgb(103, 76, 255);
+  color: #fff;
 }
 
+/* Styling for navbar links */
 #navbar ul li a {
   display: block;
   padding: 5px;
@@ -148,20 +165,23 @@ p {
   text-align: right;
 }
 
+/* Hover effect for navbar links */
 #navbar ul li a:hover,
 #navbar ul li a.current {
   background: rgb(98, 40, 233);
   color: #fff;
 }
 
-img{
+/* Styling for images */
+img {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
   width: 25%;
 }
 
-video{
+/* Styling for videos */
+video {
   display: inline-block;
   align-items: baseline;
   margin-left: auto;
@@ -169,7 +189,8 @@ video{
   width: 50%;
 }
 
-tr{
+/* Styling for table rows */
+tr {
   table-layout: auto;
   margin-left: auto;
   margin-right: auto;
@@ -180,19 +201,22 @@ tr{
   color: #fff;
 }
 
+/* Styling for response message */
 #response {
   margin-top: 20px;
-  color: #fff; 
-  font-size: 16px; 
+  color: #fff;
+  font-size: 16px;
   text-align: center;
 }
 
+/* Styling for contact form */
 #contactForm {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Styling for contact form input fields */
 #contactForm input[type="text"],
 #contactForm input[type="email"],
 #contactForm textarea {
@@ -205,7 +229,7 @@ tr{
   resize: vertical;
 }
 
-
+/* Styling for contact form submit button */
 #contactForm input[type="submit"] {
   background-color: #4CAF50;
   color: white;
@@ -215,24 +239,29 @@ tr{
   cursor: pointer;
 }
 
+/* Hover effect for contact form submit button */
 #contactForm input[type="submit"]:hover {
   background-color: #45a049;
 }
 
+/* Styling for contact form labels */
 #contactForm label {
-  text-align: center; 
+  text-align: center;
   margin-top: 10px;
 }
 
+/* Styling for error messages */
 .error {
   color: red;
 }
 
+/* Styling for Google map container */
 .google-map {
   padding-bottom: 50%;
   position: relative;
 }
 
+/* Styling for Google map iframe */
 .google-map iframe {
   height: 600;
   width: 800;

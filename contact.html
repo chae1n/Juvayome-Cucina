@@ -5,27 +5,32 @@
   <meta charset="utf-8">
   <title>Contact Form</title>
   <meta name="robots" content="noindex,nofollow">
+  <!-- Link to Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Link to custom stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  /* Basic styling for the headers */
+  <!-- Basic styling for the headers -->
   <style>
-    h2{
+    h2 {
       font-family: 'Inconsolata', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
                     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-            font-size: 25px;
-            color: beige;
-            margin-bottom: 20px;
+      font-size: 25px;
+      color: beige;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 
 <body>
   <header>
+    <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Logo -->
         <h1 class="logo"><a href="index.html">Juvayome Cucina</a></h1>
+        <!-- Navigation Links -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active"><a class="nav-link" href="index.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
@@ -36,6 +41,7 @@
     </nav>
   </header>
 
+  <!-- Contact Form -->
   <h2>Contact Us</h2>
   <form id="contactForm" method="POST" action="https://postman-echo.com/post">
     <label for="name">Name:</label>
@@ -49,16 +55,20 @@
 
     <input type="submit" value="Submit">
   </form>
+  <!-- Response Message -->
   <div id="response"></div>
 
+  <!-- Announcement -->
   <h2>Opening Our New Location on Earth!</h2>
   <div class="google-map">
+    <!-- Google Maps Embed -->
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56916.28874415886!2d-80.11833740000002!3d26.926715599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d93335441a6f7d%3A0xdc51486fff899a21!2sJupiter%2C%20FL!5e0!3m2!1sen!2sus!4v1716529087265!5m2!1sen!2sus"
       width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 
+  <!-- Link to JavaScript file -->
   <script src="script.js"></script>
 </body>
 
